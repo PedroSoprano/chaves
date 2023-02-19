@@ -40,10 +40,11 @@ function App() {
   }
   return (
     <div >
-      <input onChange={(event) => setValorInput(event.target.value)}></input> 
+      <input value={valorInput} onChange={(event) => setValorInput(event.target.value)}></input> 
       <button onClick={(event) => {
         arr.push(valorInput)
         setCompetidor(arr)
+        setValorInput("")
       }}>Adicionar competidor</button>
       <ul>
       {competidores?.map((item) => {
