@@ -40,6 +40,7 @@ function App() {
   }
   return (
     <div >
+      <h2>tatames figth shop</h2>
       <input value={valorInput} onChange={(event) => setValorInput(event.target.value)}></input> 
       <button onClick={(event) => {
         arr.push(valorInput)
