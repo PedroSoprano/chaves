@@ -41,27 +41,31 @@ function App() {
   return (
     <div >
       <h2>tatames figth shop</h2>
-      <input value={valorInput} onChange={(event) => setValorInput(event.target.value)}></input> 
+      <input value={valorInput} onChange={(event) => setValorInput(event.target.value)} onKeyDown={(event) => {if(event.key == "Enter"){
+        arr.push(valorInput)
+        setCompetidor(arr)
+        setValorInput("")
+      }}}></input> 
       <button onClick={(event) => {
         arr.push(valorInput)
         setCompetidor(arr)
         setValorInput("")
       }}>Adicionar competidor</button>
       <ul>
-      {competidores?.map((item) => {
-        return <li>{item}</li>
+      {competidores?.map((item, index) => {
+        return <li key={index}>{item}</li>
       })}
       </ul>
       <button onClick={gerarChaves}>Gerar chaves</button>
       <div className='container'>
         <ul className='coluna1'>
         {column1?.map((item) => {
-        return <li>{item}</li>
+        return <li key={item}>{item}</li>
       })}
         </ul>
         <ul className='coluna2'>
         {column2?.map((item) => {
-        return <li>{item}</li>
+        return <li key={item}>{item}</li>
       })}
         </ul>
       </div>
